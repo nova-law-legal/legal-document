@@ -1,0 +1,175 @@
+{
+  "_comment": "양식별 슬롯 매핑. slot 키는 hwpx_slots.py 기준. {name}{rrn}{birth}{address}{phone}{court}는 치환 토큰. party_fields=수집할 당사자 입력. id_kind=rrn(주민번호)|birth(생년월일)|none. lawyer per_line 기본 3.",
+  "forms": [
+    {
+      "id": "criminal_defense",
+      "title": "변호인선임신고서 (피의자·피고인)",
+      "category": "형사",
+      "template": "변호인선임신고서(샘플) - 피의자, 피고인.hwpx",
+      "party_term": "선임인",
+      "id_kind": "rrn",
+      "party_fields": ["name", "rrn", "address"],
+      "supports_corporation": true,
+      "court_hint": "경찰서",
+      "slots": {
+        "case":    {"key": "cell:0:1:1"},
+        "name":    {"key": "p:5", "template": "{name}                    (인)", "stamp": true},
+        "rrn":     {"key": "p:6", "template": "{rrn}"},
+        "address": {"key": "p:7", "template": "{address}"},
+        "court":   {"key": "p:31", "template": "{court} 귀중"},
+        "lawyers": {"keys": ["p:19", "p:20", "p:21"]}
+      }
+    },
+    {
+      "id": "victim_counsel",
+      "title": "변호사선임신고서 (피해자)",
+      "category": "형사",
+      "template": "변호사선임신고서(샘플) - 피해자.hwpx",
+      "party_term": "선임인",
+      "id_kind": "rrn",
+      "party_fields": ["name", "rrn", "address"],
+      "supports_corporation": true,
+      "court_hint": "경찰서",
+      "slots": {
+        "case":    {"key": "cell:0:1:1"},
+        "name":    {"key": "p:5", "template": "{name}                    (인)", "stamp": true},
+        "rrn":     {"key": "p:6", "template": "{rrn}"},
+        "address": {"key": "p:7", "template": "{address}"},
+        "court":   {"key": "p:31", "template": "{court} 귀중"},
+        "lawyers": {"keys": ["p:19", "p:20", "p:21"]}
+      }
+    },
+    {
+      "id": "complaint_agent",
+      "title": "고소대리위임장 (선임신고서)",
+      "category": "형사",
+      "template": "고소대리위임장(샘플).hwpx",
+      "party_term": "고소인",
+      "id_kind": "rrn",
+      "party_fields": ["name", "rrn", "address", "phone"],
+      "supports_corporation": true,
+      "court_hint": "경찰서",
+      "slots": {
+        "case":    {"key": "cell:0:1:1"},
+        "name":    {"key": "p:5", "template": "{name}                    (인)", "stamp": true},
+        "rrn":     {"key": "p:6", "template": "{rrn}"},
+        "address": {"key": "p:7", "template": "{address}"},
+        "phone":   {"key": "p:8", "template": "{phone}"},
+        "court":   {"key": "p:32", "template": "{court} 귀중"},
+        "lawyers": {"keys": ["p:20", "p:21", "p:22"]}
+      }
+    },
+    {
+      "id": "civil_plaintiff",
+      "title": "소송위임장 (원고·신청인)",
+      "category": "민사",
+      "template": "원고, 신청인 등 소송위임장(샘플).hwpx",
+      "party_term": "위임인",
+      "id_kind": "birth",
+      "party_fields": ["name", "birth", "address"],
+      "supports_corporation": true,
+      "court_hint": "지방법원",
+      "slots": {
+        "case":      {"key": "cell:0:1:1"},
+        "plaintiff": {"key": "cell:0:2:1"},
+        "defendant": {"key": "cell:0:3:1"},
+        "name":      {"key": "p:10", "template": "{name}                    (인)", "stamp": true},
+        "birth":     {"key": "p:11", "template": "{birth}"},
+        "address":   {"key": "p:12", "template": "{address}"},
+        "court":     {"key": "p:32", "template": "{court} 귀중"},
+        "lawyers":   {"keys": ["p:20", "p:21", "p:22"]}
+      }
+    },
+    {
+      "id": "civil_defendant",
+      "title": "소송위임장 (피고·피신청인)",
+      "category": "민사",
+      "template": "피고, 피신청인 등 소송위임장(샘플).hwpx",
+      "party_term": "위임인",
+      "id_kind": "birth",
+      "party_fields": ["name", "birth", "address"],
+      "supports_corporation": true,
+      "court_hint": "지방법원",
+      "slots": {
+        "case":      {"key": "cell:0:1:1"},
+        "plaintiff": {"key": "cell:0:2:1"},
+        "defendant": {"key": "cell:0:3:1"},
+        "name":      {"key": "p:10", "template": "{name}                    (인)", "stamp": true},
+        "birth":     {"key": "p:11", "template": "{birth}"},
+        "address":   {"key": "p:12", "template": "{address}"},
+        "court":     {"key": "p:31", "template": "{court} 귀중"},
+        "lawyers":   {"keys": ["p:19", "p:20", "p:21"]}
+      }
+    },
+    {
+      "id": "counsel_add",
+      "title": "담당변호사 추가 지정서",
+      "category": "공통",
+      "template": "담당변호사 추가 지정서(샘플).hwpx",
+      "party_term": "위임인",
+      "id_kind": "none",
+      "party_fields": ["name"],
+      "supports_corporation": false,
+      "court_hint": "경찰서",
+      "slots": {
+        "case":    {"key": "cell:0:1:1"},
+        "name":    {"key": "p:5", "template": "{name}"},
+        "court":   {"key": "p:24", "template": "{court} 귀중"},
+        "lawyers": {"keys": ["p:13", "p:14"], "per_line": 3}
+      }
+    },
+    {
+      "id": "resignation",
+      "title": "사임신고서",
+      "category": "공통",
+      "template": "사임신고서(샘플).hwpx",
+      "party_term": "선임인",
+      "id_kind": "none",
+      "party_fields": ["name"],
+      "supports_corporation": false,
+      "court_hint": "경찰서",
+      "slots": {
+        "case":  {"key": "cell:0:1:1"},
+        "name":  {"key": "cell:0:2:1"},
+        "court": {"key": "p:9", "template": "{court} 귀중"},
+        "lawyers_resign": {"key": "p:8", "prefix": "담당변호사 ", "join": ""}
+      }
+    },
+    {
+      "id": "counsel_withdraw",
+      "title": "담당변호사 지정 철회서",
+      "category": "공통",
+      "template": "담당변호사 지정 철회서(샘플).hwpx",
+      "party_term": "선임인",
+      "id_kind": "none",
+      "party_fields": ["name"],
+      "supports_corporation": false,
+      "court_hint": "경찰서",
+      "slots": {
+        "case":  {"key": "cell:0:1:1"},
+        "name":  {"key": "cell:0:2:1"},
+        "court": {"key": "p:14", "template": "{court} 귀중"},
+        "lawyers_withdraw": {"keys": ["p:8", "p:9", "p:10"], "template": "변호사 {name} (인)"}
+      }
+    },
+    {
+      "id": "criminal_defense_detained",
+      "title": "변호인선임신고서 (구속·무인용)",
+      "category": "형사",
+      "template": "변호인선임신고서(샘플) - 구속 무인용.hwpx",
+      "party_term": "선임인",
+      "id_kind": "rrn",
+      "party_fields": ["name", "rrn", "detention_no", "detention_center"],
+      "supports_corporation": false,
+      "court_hint": "구치소",
+      "slots": {
+        "case":             {"key": "cell:1:1:1"},
+        "detention_no":      {"key": "cell:0:2:1"},
+        "name":             {"key": "p:25", "template": "{name}(인)", "stamp": true},
+        "rrn":              {"key": "p:26", "template": "{rrn}"},
+        "detention_center": {"key": "p:28", "template": "{detention_center}(인)"},
+        "lawyers":          {"keys": ["p:36", "p:37", "p:38"]}
+      }
+    }
+  ]
+}

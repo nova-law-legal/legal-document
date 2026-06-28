@@ -9,3 +9,13 @@ __pycache__/
 .venv/
 venv/
 .pytest_cache/
+
+# === 선임서류 생성기 (nova-docgen) ===
+# 빌드 산출물 (재생성 가능, 대용량)
+nova-docgen/build/
+nova-docgen/dist/
+# 대용량 참조 바이너리 (폰트는 nova-docgen/assets/에 추출 완료)
+도장생성기_v2yb.exe
+# 필수 설정/매핑 json은 위 *.json 무시 규칙에서 예외 (비밀정보 아님)
+!nova-docgen/forms.json
+!nova-docgen/config.json

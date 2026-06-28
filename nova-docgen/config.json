@@ -1,0 +1,31 @@
+{
+  "firm": {
+    "name": "법무법인 노바",
+    "tel": "032-212-4047",
+    "fax": "032-232-7047",
+    "email": "legal@novalaw.kr",
+    "delivery_place": "인천 미추홀구 한나루로 436 두원빌딩 301호",
+    "delivery_receiver": "법무법인 노바",
+    "offices": [
+      "인천 : 인천 미추홀구 한나루로 436, 두원빌딩 301호",
+      "서울 : 서울 용산구 한강대로 372, 센트레빌아스테리움 A동 1006호"
+    ]
+  },
+  "lawyers": [
+    {"name": "이돈호", "reg": "32032"},
+    {"name": "천기섭", "reg": "38179"},
+    {"name": "김태환", "reg": "36444"},
+    {"name": "채원협", "reg": "33166"},
+    {"name": "박정윤", "reg": "41799"},
+    {"name": "박준호", "reg": "39933"},
+    {"name": "김정아", "reg": "40071"},
+    {"name": "김수인", "reg": "40545"},
+    {"name": "이종원", "reg": "40574"}
+  ],
+  "stamp": {
+    "default_kind": "oval",
+    "default_color": "red",
+    "default_bold": true,
+    "enabled_default": true
+  }
+}
